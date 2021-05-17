@@ -1,5 +1,5 @@
 ; boot.asm
-; Bootloader for Platypus OS, adapted from Babystep tutorials on OSDev.org using BIOS.
+; Bootloader adapted from Babystep tutorials on OSDev.org using BIOS.
 
 mov ax, 0x07c0
 	mov ds, ax
@@ -17,7 +17,7 @@ ch_loop:lodsb
 hang:
 	jmp hang
 
-msg   db 'Platypus OS BIOS booted!', 13, 10, 0
+msg   db 'BIOS booted! Hello!', 13, 10, 0
 	times 512-($-$$) db 0 ; I changed it from 510 to 512
 	db 0x55
 	db 0xAA
